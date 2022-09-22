@@ -30,6 +30,14 @@ body{
     border-style: groove;
     border-width: 2px;
 }
+#mapBox{
+    position: absolute;
+    top: 25px;
+    width: 800px;
+    height: 475px;
+    border-style: groove;
+    border-width: 2px;
+}
 #stack{
     position: absolute;
     left: 420px;
@@ -63,4 +71,5 @@ h4{
     margin: 0;
     border-style: groove;
     border-width: 2px;
+    text-align: center;
 }
