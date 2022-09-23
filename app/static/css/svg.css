@@ -1,0 +1,25 @@
+#pieSvg{
+    position: absolute;
+    top: 25px;
+    width: 400px;
+    height: 375px;
+}
+#pathSvg{
+    position: absolute;
+    top: 25px;
+    width: 600px;
+    height: 475px;
+}
+#stackSvg{
+    position: absolute;
+    top: 25px;
+    width: 800px;
+    height: 375px;
+}
+#linesSvg{
+    position: absolute;
+    top: 25px;
+    width: 600px;
+    height: 375px;
+}
+

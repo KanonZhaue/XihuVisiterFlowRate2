@@ -9,10 +9,10 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 
-    <script src="./d3.js"></script>
-
+    <script src="https://d3js.org/d3.v6.js"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./src/RiverView/RiverView.css">
+    <link rel="stylesheet" href="./css/svg.css">
 </head>
 <body>
     <div id="ui">
@@ -24,15 +24,19 @@
     </div>
     <div id="path">
         <h4>网络视图</h4>
+        <svg id="pathSvg"></svg>
     </div>
     <div id="pie">
         <h4>径向坐标视图</h4>
+        <svg id="pieSvg"></svg>
     </div>
     <div id="stack">
         <h4>河流视图</h4>
+        <svg id="stackSvg"></svg>
     </div>
     <div id="lines">
         <h4>景点推荐</h4>
+        <svg id="linesSvg"></svg>
     </div>
 
 
