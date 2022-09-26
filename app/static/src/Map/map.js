@@ -1,6 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiamltbXloYW5hIiwiYSI6ImNsODA2bnljcjAzNzczdW1rZW96NXZ1bmoifQ.JtU01Cs6q61jWagJGGpluA';
 const map = new mapboxgl.Map({
-    container: 'mapBox', // container ID
+    container: 'map', // container ID
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/light-v10', // style URL
     center: [120.14, 30.246], // starting position [lng, lat]
@@ -17,6 +17,140 @@ map.on('style.load', () => {
         .setLngLat(xihushijing[Object.keys(xihushijing)[i]].position)
         .addTo(map);
     }
+});
+map.on('load', function () {
+    // Add a geojson point source.
+    // Heatmap layers also work with a vector tile source.
+    map.addSource('earthquakes', {
+        'type': 'geojson',
+        'data':
+            './data/checkMapData.geojson'
+    });
+
+    // map.addLayer(
+    //     {
+    //         'id': 'earthquakes-heat',
+    //         'type': 'heatmap',
+    //         'source': 'earthquakes',
+    //         'maxzoom': 9,
+    //         'paint': {
+    //             // Increase the heatmap weight based on frequency and property magnitude
+    //             'heatmap-weight': [
+    //                 'interpolate',
+    //                 ['linear'],
+    //                 ['get', 'dbh'],
+    //                 0,
+    //                 0,
+    //                 6,
+    //                 1
+    //             ],
+    //             // Increase the heatmap color weight weight by zoom level
+    //             // heatmap-intensity is a multiplier on top of heatmap-weight
+    //             'heatmap-intensity': [
+    //                 'interpolate',
+    //                 ['linear'],
+    //                 ['zoom'],
+    //                 0,
+    //                 1,
+    //                 9,
+    //                 3
+    //             ],
+    //             // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+    //             // Begin color ramp at 0-stop with a 0-transparancy color
+    //             // to create a blur-like effect.
+    //             'heatmap-color': [
+    //                 'interpolate',
+    //                 ['linear'],
+    //                 ['heatmap-density'],
+    //                 0,
+    //                 'rgba(33,102,172,0)',
+    //                 0.2,
+    //                 'rgb(103,169,207)',
+    //                 0.4,
+    //                 'rgb(209,229,240)',
+    //                 0.6,
+    //                 'rgb(253,219,199)',
+    //                 0.8,
+    //                 'rgb(239,138,98)',
+    //                 1,
+    //                 'rgb(178,24,43)'
+    //             ],
+    //             // Adjust the heatmap radius by zoom level
+    //             'heatmap-radius': [
+    //                 'interpolate',
+    //                 ['linear'],
+    //                 ['zoom'],
+    //                 0,
+    //                 2,
+    //                 9,
+    //                 20
+    //             ],
+    //             // Transition from heatmap to circle layer by zoom level
+    //             'heatmap-opacity': [
+    //                 'interpolate',
+    //                 ['linear'],
+    //                 ['zoom'],
+    //                 7,
+    //                 1,
+    //                 9,
+    //                 0
+    //             ]
+    //         }
+    //     },
+    //     'waterway-label'
+    // );
+
+    map.addLayer(
+        {
+            'id': 'earthquakes-point',
+            'type': 'circle',
+            'source': 'earthquakes',
+            'minzoom': 7,
+            'paint': {
+                // Size circle radius by earthquake magnitude and zoom level
+                'circle-radius': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    7,
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 6, 4],
+                    16,
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 5, 6, 50]
+                ],
+                // Color circle by earthquake magnitude
+                'circle-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'dbh'],
+                    1,
+                    'rgba(33,102,172,0)',
+                    2,
+                    'rgb(103,169,207)',
+                    3,
+                    'rgb(209,229,240)',
+                    4,
+                    'rgb(253,219,199)',
+                    5,
+                    'rgb(239,138,98)',
+                    6,
+                    'rgb(178,24,43)'
+                ],
+                'circle-stroke-color': 'white',
+                'circle-stroke-width': 1,
+                // Transition from heatmap to circle layer by zoom level
+                'circle-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    7,
+                    0,
+                    8,
+                    1
+                ]
+            }
+        },
+        'waterway-label'
+    );
 });
 map.on("click", (e) => {
     console.log(e)
@@ -93,14 +227,14 @@ map.on("click", (e) => {
 
 
 var xihushijing = {
-    '苏提春晓': { position: [120.1450619-0.011011980080283479, 30.2500358-0.0038387716039025577], color: 'rgba(255,0,0)' },
-    '曲院风荷': { position: [120.1396002-0.011011980080283479, 30.2554640-0.0038387716039025577], color: 'rgba(255,165,0)' },
-    '平湖秋月': { position: [120.1522124-0.011011980080283479, 30.2584588-0.0038387716039025577], color: 'rgba(255,255,0)' },
-    '断桥残雪': { position: [120.1574226-0.011011980080283479, 30.2638553-0.0038387716039025577], color: 'rgba(0,255,0)' },//t
-    '花港观鱼': { position: [120.1484755-0.011011980080283479, 30.2379929-0.0038387716039025577], color: 'rgba(0,255,255)' },
-    '柳浪闻莺': { position: [120.1627765-0.011011980080283479, 30.2454809-0.0038387716039025577], color: 'rgba(0,0,255)' },//r
+    '苏提春晓': { position: [120.13404991991972, 30.246197028396097], color: 'rgba(255,0,0)' },
+    '曲院风荷': { position: [120.12858821991972, 30.251625228396097], color: 'rgba(255,165,0)' },
+    '平湖秋月': { position: [120.14120041991971, 30.254620028396097], color: 'rgba(255,255,0)' },
+    '断桥残雪': { position: [120.14641061991972, 30.260016528396097], color: 'rgba(0,255,0)' },//t
+    '花港观鱼': { position: [120.13746351991972, 30.234154128396096], color: 'rgba(0,255,255)' },
+    '柳浪闻莺': { position: [120.15176451991972, 30.241642128396098], color: 'rgba(0,0,255)' },//r
     '三潭印月': { position: [120.14089070668666, 30.241312057137563], color: 'rgba(128,0,128)' },
-    '双峰插云': { position: [120.1287487-0.011011980080283479, 30.2535923-0.0038387716039025577], color: 'rgba(255,192,203)' },//l
-    '雷峰夕照': { position: [120.1563896-0.011011980080283479, 30.2374469-0.0038387716039025577], color: 'rgba(192,192,192)' },
-    '南屏晚钟': { position: [120.1561830-0.011011980080283479, 30.2351770-0.0038387716039025577], color: 'rgba(128,128,128)' },//b
+    '双峰插云': { position: [120.11773671991972, 30.2497535283961], color: 'rgba(255,192,203)' },//l
+    '雷峰夕照': { position: [120.14537761991971, 30.233608128396096], color: 'rgba(192,192,192)' },
+    '南屏晚钟': { position: [120.14517101991972, 30.231338228396098], color: 'rgba(128,128,128)' },//b
 }
