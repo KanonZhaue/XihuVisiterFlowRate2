@@ -15,7 +15,10 @@ map.on('style.load', () => {
     for(i=0;i<Object.keys(xihushijing).length;i++){
         positions = new mapboxgl.Marker({color:xihushijing[Object.keys(xihushijing)[i]].color})
         .setLngLat(xihushijing[Object.keys(xihushijing)[i]].position)
-        .addTo(map);
+        .addTo(map)
+        .on('click',(e)=>{
+            console.log(e)
+        })
     }
 });
 map.on('load', function () {

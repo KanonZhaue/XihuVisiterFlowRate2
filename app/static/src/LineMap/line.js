@@ -67,6 +67,18 @@ d3.dsv(',','./data/checkdata4.csv',function(data){return data})
         .attr('stroke', function (d, i) {
             return LineColorScale(1-i/200)
         })
+        var LinePath = LineSvg.selectAll('.LinePath')
+            .data(data)
+            .join('path')
+            .attr('class', 'LinePath')
+            .attr('d', function (d, i) {
+                return `M${colorBarWidth + scaleSpace * 0} ${LineSexScale(d['sex']) + scaleTop} L${colorBarWidth + scaleSpace * 1} ${LineEduScale(d['edu']) + scaleTop} L${colorBarWidth + scaleSpace * 2} ${LineIncomeScale(parseFloat(d['income'])) + scaleTop} L${colorBarWidth + scaleSpace * 3} ${LinePiPeiScale(parseFloat(d['pipei'])) + scaleTop} `
+            })
+            .attr('stroke-width', 1)
+            .attr('fill', 'none')
+            .attr('stroke', function (d, i) {
+                return LineColorScaleAlpha((parseFloat(d['pipei'])))
+            })
 } )
     
 }
