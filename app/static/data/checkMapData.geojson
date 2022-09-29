@@ -101,5 +101,56 @@
                 "coordinates": [120.14517101991972, 30.231338228396098]
             }
         }
+
+
+
+
+
+
+
+
+        ,
+        {
+            "type": "Feature",
+            "properties": {
+                "dbh": 4.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.14517101991972, 30.231338228396098]
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "properties": {
+                "dbh": 3.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.143101991972, 30.23413382283998]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "dbh": 5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.14317101991972, 30.2313382283098]
+            }
+        }
+        ,
+        {
+            "type": "Feature",
+            "properties": {
+                "dbh": 4.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.143101991972, 30.23413382283998]
+            }
+        }
     ]
 }

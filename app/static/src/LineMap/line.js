@@ -1,9 +1,11 @@
 var LineSvg = d3.select("#linesSvg")
 
 
-function DrawLineMap(){
+function DrawLineMap(index1){
 d3.dsv(',','./data/checkdata4.csv',function(data){return data})
-.then(function(data){
+.then(function(alldata){
+    console.log(alldata)
+    data = alldata.filter(item => item.tp == Object.keys(xihushijing)[index1])
     console.log(data)
     var scaleLength = 340,scaleSpace=160,colorBarWidth=40,scaleTop=20,LineBarWidth=scaleLength/200;
     var LineColorScaleAlpha = d3.scaleLinear()

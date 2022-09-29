@@ -13,18 +13,17 @@ map.on('style.load', () => {
 
 
     for(i=0;i<Object.keys(xihushijing).length;i++){
-        positions = new mapboxgl.Marker({color:xihushijing[Object.keys(xihushijing)[i]].color})
+        positions = new mapboxgl.Marker({color:xihushijing[Object.keys(xihushijing)[i]].color,scale:0.6})
         .setLngLat(xihushijing[Object.keys(xihushijing)[i]].position)
         .addTo(map)
-        .on('click',(e)=>{
-            console.log(e)
-        })
+            positions.onclick = function(d,i){
+        }
     }
 });
 map.on('load', function () {
     // Add a geojson point source.
     // Heatmap layers also work with a vector tile source.
-    map.addSource('earthquakes', {
+    map.addSource('FlowRate', {
         'type': 'geojson',
         'data':
             './data/checkMapData.geojson'
@@ -32,9 +31,9 @@ map.on('load', function () {
 
     map.addLayer(
         {
-            'id': 'earthquakes-heat',
+            'id': 'heatMap1',
             'type': 'heatmap',
-            'source': 'earthquakes',
+            'source': 'FlowRate',
             'maxzoom': 16,
             'paint': {
                 // Increase the heatmap weight based on frequency and property magnitude
@@ -44,7 +43,7 @@ map.on('load', function () {
                     ['get', 'dbh'],
                     0,
                     0,
-                    6,
+                    1,
                     1
                 ],
                 // Increase the heatmap color weight weight by zoom level
@@ -105,9 +104,9 @@ map.on('load', function () {
 
     map.addLayer(
         {
-            'id': 'earthquakes-point',
+            'id': 'heatmap-point',
             'type': 'circle',
-            'source': 'earthquakes',
+            'source': 'FlowRate',
             'minzoom': 1,
             'paint': {
                 // Size circle radius by earthquake magnitude and zoom level
@@ -116,9 +115,9 @@ map.on('load', function () {
                     ['linear'],
                     ['zoom'],
                     1,
-                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 6, 4],
-                    30,
-                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 5, 6, 50]
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 6, 6],
+                    13,
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 6, 10]
                 ],
                 // Color circle by earthquake magnitude
                 'circle-color': [
@@ -194,10 +193,17 @@ map.on("click", (e) => {
             .startAngle(Math.PI * 2 / distances.length * i)
             .endAngle(Math.PI * 2 / distances.length * (i + 1));
         pieSvg.append('path')
+            .datum(i)
             .attr('d', arc())
+            
             .attr('class', 'piePaths')
             .attr('fill', xihushijing[Object.keys(xihushijing)[i]].color)
             .attr('transform', 'translate(200,200)')
+            .on('click',function(a){
+                console.log(a.path[0].__data__)
+                DrawLineMap(a.path[0].__data__)
+            })
+            
 
     }
     for (i = 0; i < distances.length; i++) {
@@ -222,7 +228,9 @@ map.on("click", (e) => {
             .attr('transform', `rotate(${360 / 20 * (2 * i + 1)},200,200)`)
 
     }
-
+    const clickSight = map.queryRenderedFeatures(e.point,{
+        // layers:
+    })
 
 
     // .innerRadius(function(){console.log(1)})
