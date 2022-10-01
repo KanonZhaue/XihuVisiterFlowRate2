@@ -74,7 +74,7 @@ d3.dsv(',','./data/checkdata4.csv',function(data){return data})
             .join('path')
             .attr('class', 'LinePath')
             .attr('d', function (d, i) {
-                return `M${colorBarWidth + scaleSpace * 0} ${LineSexScale(d['sex']) + scaleTop} L${colorBarWidth + scaleSpace * 1} ${LineEduScale(d['edu']) + scaleTop} L${colorBarWidth + scaleSpace * 2} ${LineIncomeScale(parseFloat(d['income'])) + scaleTop} L${colorBarWidth + scaleSpace * 3} ${LinePiPeiScale(parseFloat(d['pipei'])) + scaleTop} `
+                return `M${colorBarWidth + scaleSpace * 0} ${LineSexScale(d['sex']) + scaleTop+85} L${colorBarWidth + scaleSpace * 1} ${LineEduScale(d['edu']) + scaleTop+45 } L${colorBarWidth + scaleSpace * 2} ${LineIncomeScale(parseFloat(d['income'])) + scaleTop} L${colorBarWidth + scaleSpace * 3} ${LinePiPeiScale(parseFloat(d['pipei'])) + scaleTop} `
             })
             .attr('stroke-width', 1)
             .attr('fill', 'none')

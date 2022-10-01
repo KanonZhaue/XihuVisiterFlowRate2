@@ -1,6 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiamltbXloYW5hIiwiYSI6ImNsODA2bnljcjAzNzczdW1rZW96NXZ1bmoifQ.JtU01Cs6q61jWagJGGpluA';
 const map = new mapboxgl.Map({
-    container: 'map', // container ID
+    container: 'mapBox', // container ID
     // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/light-v10', // style URL
     center: [120.14, 30.246], // starting position [lng, lat]
@@ -82,7 +82,7 @@ map.on('load', function () {
                     'interpolate',
                     ['linear'],
                     ['zoom'],
-                    0,
+                    1,
                     2,
                     9,
                     20
@@ -94,7 +94,7 @@ map.on('load', function () {
                     ['zoom'],
                     7,
                     1,
-                    9,
+                    15,
                     0
                 ]
             }
