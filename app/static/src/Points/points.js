@@ -4,7 +4,7 @@ function DrawPointsMap(){
     d3.dsv(",","./data/points.csv",function(data){return data})
     .then(function(pointdata){
         console.log(pointdata);
-        var XscaleLen = 500,YscaleLen = 400,MapTop = 50,MapLeft =50
+        var XscaleLen = 400,YscaleLen = 400,MapTop = 50,MapLeft =50
         var PointsXscale = d3.scaleLinear()
             .domain([
                 Math.min.apply(Math,pointdata.map(item => { return item.x })),
@@ -25,14 +25,35 @@ function DrawPointsMap(){
                 .attr("class",'axis')
                 .attr('transform',`translate(${MapLeft},${MapTop})`)
                 .call(PointYAxis)
-        var TypeColor = ['rgba(255,140,0,1)','rgba(255,215,0,1)','rgba(128,0,128)','rgba(255,0,0,1)','rgba(0,255,255,1)','rgba(60,179,13)','rgba(20,144,255)']
+        var TypeColor = ['rgba(128,128,128,1)','rgba(255,215,0,1)','rgba(128,0,128)','rgba(255,0,0,1)','rgba(0,255,255,1)','rgba(60,179,13)','rgba(20,144,255)']
+        var TypeText = ['Classic sights','Museum','temples','mountain','Modern landscape','Art Gallery','Park']
         for(i=0;i<pointdata.length;i++){
             PointSvg.append("circle")
                 .attr('class','pointCircles')
                 .attr('cx',`${PointsXscale(pointdata[i].x)+MapLeft}`)
                 .attr('cy',`${PointsYscale(pointdata[i].y)+MapTop}px`)
                 .attr('r','5px')
-                .attr('fill',TypeColor[parseInt(pointdata[i].label)])
+                .attr('fill',TypeColor[parseInt(pointdata[i].label)-1])
+                .text(()=>{return pointdata[i].name})
+
+            console.log(pointdata[i].name)
+        }
+        for(i=0;i<TypeColor.length;i++){
+            PointSvg.append('rect')
+            .attr('class','pointRects')
+            .attr('x',`${480}px`)
+            .attr('y',`${i*30+190}px`)
+            .attr('width','10px')
+            .attr('height','10px')
+            .attr('fill',TypeColor[i])
+            PointSvg.append('text')
+            .attr('class','pointTexts')
+            .attr('x',`${500}px`)
+            .attr('y',`${i*30+200}px`)
+            .text(()=>{
+                return TypeText[i]
+            })
+
         }
 
     })

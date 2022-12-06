@@ -11,7 +11,7 @@ body{
     border-style: groove;
     border-width: 2px;
 }
-#pie{
+#rect{
     position: absolute;
     left: 10px;
     top: 520px;
@@ -57,7 +57,7 @@ body{
     border-style: groove;
     border-width: 2px;
 }
-#lines{
+#Radar{
     position: absolute;
     left: 1230px;
     top: 520px;
