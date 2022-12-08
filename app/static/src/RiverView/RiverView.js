@@ -17,7 +17,7 @@ function DrawRiverView() {
             }
             console.log(max)
             var RiverXScale = d3.scaleLinear()
-                .domain([1, 40])
+                .domain([1, data.length])
                 .range([0, 700])
             var RiverYScale = d3.scaleLinear()
                 .domain([0, max])

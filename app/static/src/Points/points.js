@@ -25,7 +25,7 @@ function DrawPointsMap(){
                 .attr("class",'axis')
                 .attr('transform',`translate(${MapLeft},${MapTop})`)
                 .call(PointYAxis)
-        var TypeColor = ['rgba(128,128,128,1)','rgba(255,215,0,1)','rgba(128,0,128)','rgba(255,0,0,1)','rgba(0,255,255,1)','rgba(60,179,13)','rgba(20,144,255)']
+        var TypeColor = ['rgba(255,140,0,1)','rgba(255,215,0,1)','rgba(128,0,128)','rgba(255,0,0,1)','rgba(0,255,255,1)','rgba(60,179,13)','rgba(20,144,255)']
         var TypeText = ['Classic sights','Museum','temples','mountain','Modern landscape','Art Gallery','Park']
         for(i=0;i<pointdata.length;i++){
             PointSvg.append("circle")
