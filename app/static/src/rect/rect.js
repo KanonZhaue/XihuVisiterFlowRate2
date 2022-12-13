@@ -6,6 +6,7 @@ function DrawRectMap(){
     RectData = val.columns
     console.log(RectData)
     RectData2 = []
+    var columnsss = 8
     for(let i=0;i<RectData.length;i++){
         RectData2.push({"index":i,"rectValue":RectData[i]})
     }
@@ -13,7 +14,7 @@ function DrawRectMap(){
     var TopData = Object.keys(RectData2).sort(function(a,b){
         return parseFloat(RectData2[b].rectValue)-parseFloat(RectData2[a].rectValue)
     })
-    var Top5Data = TopData.splice(0,5)
+    var Top5Data = TopData.splice(0,columnsss)
     console.log(Top5Data)
     for(i=0;i<Top5Data.length;i++){
         NameList.push(Object.keys(sight2)[Top5Data[i]-1])
@@ -43,17 +44,17 @@ function DrawRectMap(){
     
      console.log(valueLists)
 
-    for(let i=0;i<5;i++){
+    for(let i=0;i<columnsss;i++){
         rectSvg.append("rect")
         .attr('x',`${MapTop+1}px`)
-        .attr('y',`${(30+300*i/5)}px`)
+        .attr('y',`${(30+300*i/columnsss)}px`)
         .attr('width',`${(parseFloat(RectsXscale(valueLists[i])))}px`)
-        .attr("height",`${300*1/5-10}`)
+        .attr("height",`${300*1/columnsss-10}`)
         .attr('fill',sight2[(NameList[i])].color)
         rectSvg.append('text')
             .attr('class','RectTexts')
             .attr('x',`${MapTop+1}px`)
-        .attr('y',`${(60+300*i/5)}px`)
+        .attr('y',`${(50+300*i/columnsss)}px`)
             .text(()=>{
                 return NameList[i]
             })
