@@ -1,7 +1,7 @@
-function DrawRiverView() {
+function DrawRiverView(dataPosition) {
     var RiverViewSvg = d3.select('#stackSvg')
     var stack = d3.stack()
-    d3.dsv(',', './data/RiverData.csv', function (data) { return data })
+    d3.dsv(',', dataPosition, function (data) { return data })
         .then(function (data) {
             console.log(data)
             var max = 0
@@ -62,4 +62,4 @@ for (i=0;i<36;i++){
 }
 
 
-DrawRiverView()
+DrawRiverView('./data/RiverData.csv')

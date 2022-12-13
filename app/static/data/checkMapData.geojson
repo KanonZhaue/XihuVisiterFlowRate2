@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 1.5,
+                "dbh": 7,
                 "icon":"music"
             },
             "geometry": {
@@ -15,7 +15,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 1.5,
+                "dbh": 15,
                 "icon":"music"
             },
             "geometry": {
@@ -26,7 +26,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 2.8,
+                "dbh": 17,
                 "icon":"music"
             },
             "geometry": {
@@ -37,7 +37,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 1.8,
+                "dbh": 33,
                 "icon":"music"
             },
             "geometry": {
@@ -48,7 +48,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 5,
+                "dbh": 42,
                 "icon":"music"
             },
             "geometry": {
@@ -59,7 +59,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 2,
+                "dbh": 44,
                 "icon":"music"
             },
             "geometry": {
@@ -70,7 +70,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 1.6,
+                "dbh": 64,
                 "icon":"music"
             },
             "geometry": {
@@ -81,7 +81,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 4.6,
+                "dbh": 61,
                 "icon":"music"
             },
             "geometry": {
@@ -92,7 +92,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 5.6,
+                "dbh": 71,
                 "icon":"music"
             },
             "geometry": {
@@ -103,7 +103,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3.6,
+                "dbh": 82,
                 "icon":"music"
             },
             "geometry": {
@@ -114,7 +114,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 4.3,
+                "dbh": 80,
                 "icon":"music"
             },
             "geometry": {
@@ -126,7 +126,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3.9,
+                "dbh": 92,
                 "icon":"music"
             },
             "geometry": {
@@ -137,7 +137,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 5,
+                "dbh": 86,
                 "icon":"music"
             },
             "geometry": {
@@ -149,7 +149,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 4.6,
+                "dbh": 104,
                 "icon":"music"
             },
             "geometry": {
@@ -161,7 +161,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 4.3,
+                "dbh": 119,
                 "icon":"music"
             },
             "geometry": {
@@ -173,7 +173,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3.9,
+                "dbh": 116,
                 "icon":"music"
             },
             "geometry": {
@@ -184,7 +184,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 2,
+                "dbh": 123,
                 "icon":"music"
             },
             "geometry": {
@@ -196,7 +196,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 155,
                 "icon":"music"
             },
             "geometry": {
@@ -209,7 +209,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 4.3,
+                "dbh": 139,
                 "icon":"music"
             },
             "geometry": {
@@ -221,7 +221,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3.9,
+                "dbh": 148,
                 "icon":"music"
             },
             "geometry": {
@@ -232,7 +232,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 2,
+                "dbh": 179,
                 "icon":"music"
             },
             "geometry": {
@@ -244,7 +244,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 183,
                 "icon":"music"
             },
             "geometry": {
@@ -255,7 +255,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 194,
                 "icon":"music"
             },
             "geometry": {
@@ -266,7 +266,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 182,
                 "icon":"music"
             },
             "geometry": {
@@ -277,7 +277,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 192,
                 "icon":"music"
             },
             "geometry": {
@@ -288,7 +288,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 207,
                 "icon":"music"
             },
             "geometry": {
@@ -299,7 +299,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 238,
                 "icon":"music"
             },
             "geometry": {
@@ -310,7 +310,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 231,
                 "icon":"music"
             },
             "geometry": {
@@ -321,7 +321,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 214,
                 "icon":"music"
             },
             "geometry": {
@@ -332,7 +332,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 277,
                 "icon":"music"
             },
             "geometry": {
@@ -343,7 +343,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 247,
                 "icon":"music"
             },
             "geometry": {
@@ -354,7 +354,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 254,
                 "icon":"music"
             },
             "geometry": {
@@ -365,7 +365,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 245,
                 "icon":"music"
             },
             "geometry": {
@@ -376,7 +376,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 268,
                 "icon":"music"
             },
             "geometry": {
@@ -387,7 +387,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 287,
                 "icon":"music"
             },
             "geometry": {
@@ -398,7 +398,7 @@
         {
             "type": "Feature",
             "properties": {
-                "dbh": 3,
+                "dbh": 4,
                 "icon":"music"
             },
             "geometry": {

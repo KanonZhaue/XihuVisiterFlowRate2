@@ -20,6 +20,22 @@
 <body>
     <div id="ui">
         <h4>控制面板</h4>
+        <Label id="youkeLabel">tourist data</Label>
+        <input type="file" id="youkeData"/>
+        <label id="sceneSpotLabel">scene spot data</label>
+        <input type="file" id="jingquData" onchange="inputSceneData()">
+        <label id="youKeYiYuanLabel">游客接受意愿</label>
+        <input type="range" id="youKeYiYuanRange" min="70" max="100" step="10" value="70" onchange="yiyuanChange()">
+        <label id="YiyuanValue">70%</label>
+        <label id="youKeGengXinJianGeLabel">游客更新间隔（分批次）</label>
+        <input type="range" id="youKeGengXinJianGe" min="1" max="5" step="2" value="1" onchange="gengxinChange()">
+        <label id="GengxinValue">1</label>
+        <label id="PRlabel">路线复杂性权重（PR）</label>
+        <input type="range" id="PRrange" min="0" max="0.5" step="0.1" value="0" onchange="luxianChange()">
+        <label id="PRValue">0</label>
+        <label id="PPlabel">景区承载力权重（PP）</label>
+        <input type="range" id="PPrange" min="0" max="0.5" step="0.1" value="0" onchange="jingquChange()">
+        <label id="PPValue">0</label>
     </div>
     <div id="map">
         <h4>地图</h4>

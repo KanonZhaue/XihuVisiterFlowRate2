@@ -2,7 +2,7 @@ var rectSvg = d3.select('#rectSvg')
 const NameList = [],valueLists = []
 
 function DrawRectMap(){
-    d3.csv('./data/FavRanking.csv').then( val => {
+    d3.csv('./data/FavRating_one.csv').then( val => {
     RectData = val.columns
     console.log(RectData)
     RectData2 = []
