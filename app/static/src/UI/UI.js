@@ -1,6 +1,7 @@
-var UIList={
+var UIDataList={
     startTime:'2022-01-01',
     endTime:'2022-01-01',
+    //startTime and endTime seems usless but i dont want to delete it
 }
 function yiyuanChange(){
     value = document.getElementById("youKeYiYuanRange").value

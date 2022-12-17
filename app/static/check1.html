@@ -9,13 +9,13 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 
-    <script src="./d3.v6.js"></script>
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./src/RiverView/RiverView.css">
-    <link rel="stylesheet" href="./css/svg.css">
-    <link rel="stylesheet" href="./src/RadarMap/Radar.css">
-    <link rel="stylesheet" href="./src/Points/points.css">
-    <link rel="stylesheet" href="./src/rect/rect.css">
+    <script src="{{url_for("static",filename='d3.v6.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='./src/RiverView/RiverView.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='./css/svg.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='./src/RadarMap/Radar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='./src/Points/points.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='./src/rect/rect.css')}}">
 </head>
 <body>
     <div id="ui">
@@ -58,11 +58,11 @@
         <svg id="RadarSvg"></svg>
     </div>
 </body>
-<script src="./src/RiverView/RiverView.js"></script>
-<script src="./src/UI/UI.js"></script>
+<script src="{{url_for("static",filename="./src/UI/UI.js")}}"></script>
+<script src="{{url_for("static",filename="./src/RiverView/RiverView.js")}}"></script>
 
-<script src="./src/Map/map.js"></script>
-<script src="./src/Points/points.js"></script>
-<script src="./src/RadarMap/Radar.js"></script>
-<script src="./src/rect/rect.js"></script>
+<script src="{{url_for("static",filename="./src/Map/map.js")}}"></script>
+<script src="{{url_for("static",filename="./src/Points/points.js")}}"></script>
+<script src="{{url_for("static",filename="./src/RadarMap/Radar.js")}}"></script>
+<script src="{{url_for("static",filename="./src/rect/rect.js")}}"></script>
 </html>
