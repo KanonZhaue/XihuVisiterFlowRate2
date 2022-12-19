@@ -14,7 +14,8 @@ Batch = 5  # 分批次走(1~3~5~10)
 PR = 0.1  # 路径权重(0~0.1~0.2~0.3~0.5)
 PP = 0.1  # 人口权重(0~0.1~0.2~0.3~0.5)
 AP = 80  # 游客接受意愿(70~80~90~100)
-RiverData = np.zeros((Batch * 10, 37), dtype=int)  # 河流图数据（景区人口数量的集合）
+timesssss=10
+RiverData = np.zeros((Batch * timesssss, 37), dtype=int)  # 河流图数据（景区人口数量的集合）
 
 with open("rating/RouteRating.csv")as f:
     reader = csv.reader(f)
@@ -42,7 +43,7 @@ with open("data/ArrivedData.csv")as f:
         for j, n in enumerate(row):
             ArrivedData[i][j] = n
 
-for time in range(0, 10):
+for time in range(0, timesssss):
     for batch in range(0, Batch):
         print("第" + str(time) + "次人口分布,第" + str(batch) + "批次移动,第" + str(time * Batch + batch) + "次移动")
         # 记录上次的人口布局
@@ -87,7 +88,7 @@ with open('rating/RiverData.csv', 'w', newline='')as f:
         , '31', '32', '33', '34', '35', '36']
     writer = csv.DictWriter(f, fieldnames=fnames)
     writer.writeheader()
-    for i in range(0, 10 * Batch):
+    for i in range(0, timesssss * Batch):
         writer.writerow({'index': str(RiverData[i][0]),
                          '1': RiverData[i][1], '2': RiverData[i][2], '3': RiverData[i][3], '4': RiverData[i][4],
                          '5': RiverData[i][5], '6': RiverData[i][6],

@@ -1,5 +1,5 @@
 var rectSvg = d3.select('#rectSvg')
-const NameList = [], valueLists = []
+
 
 function DrawRectMap() {
     rectSvg.selectAll('.axis').remove()
@@ -18,6 +18,7 @@ function DrawRectMap() {
             RectData = d.data
             console.log(RectData)
             RectData2 = []
+            NameList = [], valueLists = []
             var columnsss = 8
             for (let i = 0; i < RectData.length; i++) {
                 RectData2.push({ "index": i, "rectValue": RectData[i] })
@@ -67,6 +68,8 @@ function DrawRectMap() {
                     .attr('class', 'RectTexts')
                     .attr('x', `${MapTop + 1}px`)
                     .attr('y', `${(50 + 300 * i / columnsss)}px`)
+                    // .attr('stroke','white')
+                    .attr('fill','white')
                     .text(() => {
                         return NameList[i]
                     })

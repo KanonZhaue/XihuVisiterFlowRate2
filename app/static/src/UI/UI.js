@@ -4,6 +4,10 @@ var UIDataList={
     //startTime and endTime seems usless but i dont want to delete it
     pp:0.1,
     pr:0.1,
+    batch:1,
+    ap:0.7,
+    redRadarIndex:-1,
+    greenRadarIndex:-1,
     
 }
 var sight2 = {
@@ -47,19 +51,25 @@ var sight2 = {
 function yiyuanChange(){
     value = document.getElementById("youKeYiYuanRange").value
     document.getElementById("YiyuanValue").innerHTML=value+"%"
+    UIDataList.ap = value
+    DrawRiverView()
 }function gengxinChange(){
     value = document.getElementById("youKeGengXinJianGe").value
-    document.getElementById("GengxinValue").innerHTML=value+"%"
+    document.getElementById("GengxinValue").innerHTML=value
+    UIDataList.batch=value
+    DrawRiverView()
 }function luxianChange(){
     value = document.getElementById("PRrange").value
     document.getElementById("PRValue").innerHTML=value+"%"
     UIDataList.pr = parseFloat(value)
     DrawRectMap()
+    DrawRiverView()
 }function jingquChange(){
     value = document.getElementById("PPrange").value
     document.getElementById("PPValue").innerHTML=value+"%"
     UIDataList.pp = parseFloat(value)
     DrawRectMap()
+    DrawRiverView()
 }
 // function inputSceneData(){
 //     value = document.getElementById("jingquData").value

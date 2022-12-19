@@ -19,6 +19,7 @@ map.on('style.load', () => {
     positions.forEach(element => {
         element.getElement().addEventListener('click',(e)=>{
             console.log(positions.indexOf(element))
+            UIDataList.greenRadarIndex = positions.indexOf(element)
             DrawRadarMap(positions.indexOf(element))
         })
     });
@@ -27,9 +28,419 @@ map.on('load', function () {
     // Add a geojson point source.
     // Heatmap layers also work with a vector tile source.
     map.addSource('FlowRate', {
-        'type': 'geojson',
-        'data':
-            './data/checkMapData.geojson'
+        'type': 'geojson',//下面data建议缩进，400行都是数据
+        'data':{
+            "type": "FeatureCollection",
+            "features": [
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 7,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.139,30.253]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 15,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.141,30.255]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 17,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.143,30.257]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 33,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.145,30.259]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 42,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.147,30.261]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 44,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.143,30.263]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 64,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.142,30.263]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 61,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.138,30.262]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 71,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.154, 30.264]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 82,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.156, 30.256]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 80,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.158, 30.253]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 92,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.155, 30.250]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 86,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.153, 30.245]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 104,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.153, 30.244]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 119,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.152, 30.242]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 116,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.150,30.235]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 123,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.151, 30.234]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 155,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.156, 30.230]
+                    }
+                }
+        
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 139,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.144, 30.234]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 148,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.144, 30.232]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 179,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.138, 30.229]
+                    }
+                }
+                ,
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 183,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.137, 30.234]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 194,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.136, 30.239]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 182,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.127, 30.238]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 192,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.122, 30.242]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 207,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.140, 30.240]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 238,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.127, 30.243]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 231,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.127, 30.246]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 214,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.126, 30.248]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 277,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.126, 30.251]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 247,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.128, 30.254]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 254,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.130, 30.254]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 245,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.134, 30.254]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 268,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.118, 30.252]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 287,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.108, 30.247]
+                    }
+                },
+                {
+                    "type": "Feature",
+                    "properties": {
+                        "dbh": 4,
+                        "icon":"music"
+                    },
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [120.101, 30.243]
+                    }
+                }
+            
+            
+            ]
+        }
     });
 
     map.addLayer(
