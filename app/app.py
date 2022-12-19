@@ -1,6 +1,6 @@
 import csv
 import os
-
+import json
 import flask 
 import numpy as np
 from flask_cors import CORS
@@ -19,10 +19,12 @@ def index():
     """
     return flask.render_template("check1.html")
 
-@app.route("/getRectData")#该算法由PYTHON的rcdRating中获得
+@app.route("/getRectData",methods=['POST'])#该算法由PYTHON的rcdRating中获得
 def getRectData():
-    pp=0.1
-    pr=0.1
+    requests = json.loads(flask.request.form.get('data'))
+    print(requests)
+    pp = requests['pp']
+    pr = requests['pr']
     userId = 0
     LocationData = 0
     RouteRating = np.zeros(36)
@@ -56,6 +58,13 @@ def getRectData():
     for i in range(0, 36):
         X.append(i)
         RcdRating[i] = round(FavRating[i] - pr * RouteRating[i] + pp * PopulationRating[i], 4)
+
+    returnData = {}
+    returnData['data']=RcdRating.tolist()
+
+    
+    return json.dumps(returnData)
+    
 
     
 
