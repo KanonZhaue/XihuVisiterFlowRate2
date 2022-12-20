@@ -36,7 +36,7 @@ axes
     })
     .attr('fill', (d, i) => i % 2 === 0 ? "white" : "#ddd")
     .attr('stroke', "gray")
-    .attr('transform', 'translate(300,200)')
+    .attr('transform', 'translate(200,200)')
 //画标签
 nameset = ['age', 'sex', 'cost', 'exerciseAbility', 'travelType']
 let anglePiece = 2 * Math.PI / nameset.length
@@ -62,13 +62,15 @@ texts.selectAll('text')
         else return 'middle'
     })
     .attr('dy', 6.5)
-    .attr('transform', 'translate(300,200)')
+    .attr('transform', 'translate(200,200)')
 
 
 
 
 function DrawRadarMap(index) {
     d3.selectAll(".polygons").remove()
+    d3.selectAll('.labelText').remove()
+    d3.selectAll('.labelRect').remove()
     const conf3 = {
         margins: { top: 80, left: 80, bottom: 50, right: 80 },
         textColor: 'black',
@@ -128,7 +130,22 @@ function DrawRadarMap(index) {
                     .attr('stroke', conf3.polygon2.stroke)
                     .attr('fill', conf3.polygon2.fill)
                     .attr('opacity', conf3.polygon2.opacity)
-                    .attr('transform', 'translate(300,200)')
+                    .attr('transform', 'translate(200,200)')
+                polygon.append('rect')
+                    .attr('class', 'labelRect')
+                    .attr('width', 10)
+                    .attr('height', 10)
+                    .attr('x', 400)
+                    .attr('y', 200)
+                    .attr('fill', conf3.polygon2.fill)
+                polygon.append('text')
+                    .attr('class', 'labelText')
+                    .attr('x', 410)
+                    .attr('y', 210)
+                    .text(function () {
+                        console.log(Object.keys(sight2))
+                        return Object.keys(sight2)[UIDataList.redRadarIndex]
+                    })
             }
             if (UIDataList.greenRadarIndex != -1) {
                 data = d
@@ -149,7 +166,22 @@ function DrawRadarMap(index) {
                     .attr('stroke', conf3.polygon1.stroke)
                     .attr('fill', conf3.polygon1.fill)
                     .attr('opacity', conf3.polygon1.opacity)
-                    .attr('transform', 'translate(300,200)')
+                    .attr('transform', 'translate(200,200)')
+                polygon.append('rect')
+                    .attr('class', 'labelRect')
+                    .attr('width', 10)
+                    .attr('height', 10)
+                    .attr('x', 400)
+                    .attr('y', 150)
+                    .attr('fill', conf3.polygon1.fill)
+                polygon.append('text')
+                    .attr('class', 'labelText')
+                    .attr('x', 410)
+                    .attr('y', 160)
+                    .text(function () {
+                        console.log(Object.keys(sight2))
+                        return Object.keys(sight2)[UIDataList.greenRadarIndex]
+                    })
             }
 
 
