@@ -111,47 +111,48 @@ function DrawRadarMap(index) {
             console.log(d)
             data = d
             //绘制数据多边形
-            if (UIDataList.redRadarIndex != -1) {
+            // if (UIDataList.redRadarIndex != -1) {
 
-                var clickData
-                for (i = 0; i < data.length; i++) {
-                    if (data[i].id == UIDataList.redRadarIndex) {
-                        console.log(data[i])
-                        clickData = data[i]
-                    }
-                }
-                let data1 = dataPolygonPoints(clickData)
-                let polygon = RadarSvg.append('g')
-                polygon
-                    .append('polygon')
-                    .attr('points', data1)
-                    .attr('class', 'polygons')
-                    .attr('stroke-width', conf3.polygon2.strokeWidth)
-                    .attr('stroke', conf3.polygon2.stroke)
-                    .attr('fill', conf3.polygon2.fill)
-                    .attr('opacity', conf3.polygon2.opacity)
-                    .attr('transform', 'translate(200,200)')
-                polygon.append('rect')
-                    .attr('class', 'labelRect')
-                    .attr('width', 10)
-                    .attr('height', 10)
-                    .attr('x', 400)
-                    .attr('y', 200)
-                    .attr('fill', conf3.polygon2.fill)
-                polygon.append('text')
-                    .attr('class', 'labelText')
-                    .attr('x', 410)
-                    .attr('y', 210)
-                    .text(function () {
-                        console.log(Object.keys(sight2))
-                        return Object.keys(sight2)[UIDataList.redRadarIndex]
-                    })
-            }
-            if (UIDataList.greenRadarIndex != -1) {
+            //     var clickData
+            //     for (i = 0; i < data.length; i++) {
+            //         if (data[i].id == UIDataList.redRadarIndex) {
+            //             console.log(data[i])
+            //             clickData = data[i]
+            //         }
+            //     }
+            //     let data1 = dataPolygonPoints(clickData)
+            //     let polygon = RadarSvg.append('g')
+            //     polygon
+            //         .append('polygon')
+            //         .attr('points', data1)
+            //         .attr('class', 'polygons')
+            //         .attr('stroke-width', conf3.polygon2.strokeWidth)
+            //         .attr('stroke', conf3.polygon2.stroke)
+            //         .attr('fill', conf3.polygon2.fill)
+            //         .attr('opacity', conf3.polygon2.opacity)
+            //         .attr('transform', 'translate(200,200)')
+            //     polygon.append('rect')
+            //         .attr('class', 'labelRect')
+            //         .attr('width', 10)
+            //         .attr('height', 10)
+            //         .attr('x', 400)
+            //         .attr('y', 200)
+            //         .attr('fill', conf3.polygon2.fill)
+            //     polygon.append('text')
+            //         .attr('class', 'labelText')
+            //         .attr('x', 410)
+            //         .attr('y', 209)
+            //         .text(function () {
+            //             console.log(Object.keys(sight2))
+            //             return Object.keys(sight2)[UIDataList.redRadarIndex]
+            //         })
+            //         .attr('font-size','10px')
+            // }
+            // if (UIDataList.greenRadarIndex != -1) {
                 data = d
                 var clickData
                 for (i = 0; i < data.length; i++) {
-                    if (data[i].id == UIDataList.greenRadarIndex) {
+                    if (data[i].id == UIDataList.RadarIndex) {
                         console.log(data[i])
                         clickData = data[i]
                     }
@@ -177,16 +178,17 @@ function DrawRadarMap(index) {
                 polygon.append('text')
                     .attr('class', 'labelText')
                     .attr('x', 410)
-                    .attr('y', 160)
+                    .attr('y', 159)
                     .text(function () {
                         console.log(Object.keys(sight2))
-                        return Object.keys(sight2)[UIDataList.greenRadarIndex]
+                        return Object.keys(sight2)[UIDataList.RadarIndex]
                     })
+                    .attr('font-size','10px')
             }
 
 
 
-        }
+        // }
     })
     // d3.dsv(',', './data/radar.csv', function (data) { return data })
     //     .then(function (data) {

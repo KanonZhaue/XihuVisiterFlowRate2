@@ -34,7 +34,7 @@ function DrawRectMap() {
                 valueLists.push(RectData2[Top5Data[i]].rectValue)
             }
             console.log(NameList, valueLists)
-            var XscaleLen = 300, YscaleLen = 300, MapTop = 30, RectMapLeft = 30
+            var XscaleLen = 250, YscaleLen = 300, MapTop = 30, RectMapLeft = 10
             var RectsXscale = d3.scaleLinear()
                 .domain([
                     0,
@@ -59,17 +59,18 @@ function DrawRectMap() {
 
             for (let i = 0; i < columnsss; i++) {
                 rectSvg.append("rect")
-                    .attr('x', `${MapTop + 1}px`)
+                    .attr('x', `${RectMapLeft + 1}px`)
                     .attr('y', `${(30 + 300 * i / columnsss)}px`)
                     .attr('width', `${(parseFloat(RectsXscale(valueLists[i])))}px`)
                     .attr("height", `${300 * 1 / columnsss - 10}`)
                     .attr('fill', sight2[(NameList[i])].color)
                 rectSvg.append('text')
                     .attr('class', 'RectTexts')
-                    .attr('x', `${MapTop + 1}px`)
+                    .attr('x', `${RectMapLeft + 1+(parseFloat(RectsXscale(valueLists[i])))}px`)
                     .attr('y', `${(50 + 300 * i / columnsss)}px`)
+                    .attr('font-size',"8px")
                     // .attr('stroke','white')
-                    .attr('fill','white')
+                    // .attr('fill','white')
                     .text(() => {
                         return NameList[i]
                     })

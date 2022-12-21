@@ -19,7 +19,7 @@ map.on('style.load', () => {
     positions.forEach(element => {
         element.getElement().addEventListener('click',(e)=>{
             console.log(positions.indexOf(element))
-            UIDataList.greenRadarIndex = positions.indexOf(element)
+            UIDataList.RadarIndex = positions.indexOf(element)
             DrawRadarMap(positions.indexOf(element))
         })
     });

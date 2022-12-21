@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
 
-    
+
     <link rel="stylesheet" href="{{url_for('static',filename='./css/main.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='./src/RiverView/RiverView.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='./css/svg.css')}}">
@@ -17,46 +18,47 @@
     <link rel="stylesheet" href="{{url_for('static',filename='./src/Points/points.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='./src/rect/rect.css')}}">
 </head>
-    <script src="{{url_for('static',filename='d3.v6.js')}}"></script>
-    <script src="{{url_for('static',filename='jquery-3.6.0.js')}}"></script>
+<script src="{{url_for('static',filename='d3.v6.js')}}"></script>
+<script src="{{url_for('static',filename='jquery-3.6.0.js')}}"></script>
+
 <body>
     <div id="ui">
-        <h4>控制面板</h4>
+        <h4>control panel</h4>
         <Label id="youkeLabel">tourist data</Label>
-        <input type="file" id="youkeData"/>
+        <input type="file" id="youkeData" />
         <label id="sceneSpotLabel">scene spot data</label>
         <input type="file" id="jingquData" onchange="inputSceneData()">
-        <label id="youKeYiYuanLabel">游客接受意愿</label>
+        <label id="youKeYiYuanLabel">Visitors' willingness to accept</label>
         <input type="range" id="youKeYiYuanRange" min="70" max="100" step="10" value="70" onchange="yiyuanChange()">
         <label id="YiyuanValue">70%</label>
-        <label id="youKeGengXinJianGeLabel">游客更新间隔（分批次）</label>
+        <label id="youKeGengXinJianGeLabel">Visitor update interval</label>
         <input type="range" id="youKeGengXinJianGe" min="1" max="5" step="2" value="1" onchange="gengxinChange()">
         <label id="GengxinValue">1</label>
-        <label id="PRlabel">路线复杂性权重（PR）</label>
+        <label id="PRlabel">The weight of scenic spots capacity</label>
         <input type="range" id="PRrange" min="0" max="0.5" step="0.1" value="0" onchange="luxianChange()">
         <label id="PRValue">0</label>
-        <label id="PPlabel">景区承载力权重（PP）</label>
+        <label id="PPlabel">The weight of route complexity</label>
         <input type="range" id="PPrange" min="0" max="0.5" step="0.1" value="0" onchange="jingquChange()">
         <label id="PPValue">0</label>
     </div>
     <div id="map">
-        <h4>地图</h4>
+        <h4>MAP</h4>
         <div id="mapBox"></div>
     </div>
     <div id="path">
-        <h4>散点图</h4>
+        <h4>Scatter plot</h4>
         <svg id="PointSvg"></svg>
     </div>
     <div id="rect">
-        <h4>径向坐标视图</h4>
+        <h4>the Weight of route complexity</h4>
         <svg id="rectSvg"></svg>
     </div>
     <div id="stack">
-        <h4>河流视图</h4>
+        <h4>RiverMap</h4>
         <svg id="stackSvg"></svg>
     </div>
     <div id="Radar">
-        <h4>景点推荐</h4>
+        <h4>the weight of scenic spots capacity</h4>
         <svg id="RadarSvg"></svg>
     </div>
 </body>
@@ -66,4 +68,5 @@
 <script src="{{url_for('static',filename='./src/Points/points.js')}}"></script>
 <script src="{{url_for('static',filename='./src/RadarMap/Radar.js')}}"></script>
 <script src="{{url_for('static',filename='./src/rect/rect.js')}}"></script>
+
 </html>
