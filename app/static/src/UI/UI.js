@@ -51,26 +51,29 @@ function yiyuanChange(){
     value = document.getElementById("youKeYiYuanRange").value
     document.getElementById("YiyuanValue").innerHTML=value+"%"
     UIDataList.ap = parseFloat(value)
-    DrawRiverView()
+
 }function gengxinChange(){
     value = document.getElementById("youKeGengXinJianGe").value
     document.getElementById("GengxinValue").innerHTML=value
     UIDataList.batch=parseFloat(value)
-    DrawRiverView()
+
 }function luxianChange(){
     value = document.getElementById("PRrange").value
     document.getElementById("PRValue").innerHTML=parseFloat(value)*100+"%"
     UIDataList.pr = parseFloat(value)
     DrawRectMap()
-    DrawRiverView()
+
 }function jingquChange(){
     value = document.getElementById("PPrange").value
     document.getElementById("PPValue").innerHTML=parseFloat(value)+"%"
     UIDataList.pp = parseFloat(value)
     DrawRectMap()
-    DrawRiverView()
+
 }
 // function inputSceneData(){
 //     value = document.getElementById("jingquData").value
 //     DrawRiverView(value)
 // }
+function drawRIverTotalMap(){
+    DrawRiverView()
+}
