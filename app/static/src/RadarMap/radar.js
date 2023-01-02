@@ -41,16 +41,18 @@ axes
 nameset = ['age', 'sex', 'cost', 'exerciseAbility', 'travelType']
 let anglePiece = 2 * Math.PI / nameset.length
 let texts = RadarSvg.append('g')
+x1=[50,-120,-120,50,200]
+y1=[150,100,-100,-150,0]
 texts.selectAll('text')
     .data(nameset)
     .join('text')
     .attr('class', 'radarText')
     .attr('x', (d, i) => {
-        let dx = Math.cos(anglePiece * i) * (150 + 13)
+        let dx = x1[i]
         return dx
     })
     .attr('y', (d, i) => {
-        let dy = Math.sin(anglePiece * i) * (150 + 13)
+        let dy = y1[i]
         return dy
     })
     .text((d, i) => {    //坐标轴的名字
@@ -151,12 +153,13 @@ function DrawRadarMap(index) {
             // if (UIDataList.greenRadarIndex != -1) {
                 data = d
                 var clickData
-                for (i = 0; i < data.length; i++) {
-                    if (data[i].id == UIDataList.RadarIndex) {
-                        console.log(data[i])
-                        clickData = data[i]
-                    }
-                }
+                // for (i = 0; i < data.length; i++) {
+                //     if (data[i].id == UIDataList.RadarIndex) {
+                //         console.log(data[i])
+                //         clickData = data[i]
+                //     }
+                // }
+                clickData = data[UIDataList.RadarIndex]
                 let data1 = dataPolygonPoints(clickData)
                 let polygon = RadarSvg.append('g')
                 polygon
@@ -251,6 +254,7 @@ function dataPolygonPoints(dataset) {
     const anglePiece = Math.PI * 2 / dataset.length;     //  2pi / 6
 
     let r;
+    console.log(dataset)
     r = c1(parseFloat(dataset.age))
     points.push(r * Math.cos(Math.PI * 2 / 5), r * Math.sin(Math.PI * 2 / 5))
     r = c2(parseFloat(dataset.sex))

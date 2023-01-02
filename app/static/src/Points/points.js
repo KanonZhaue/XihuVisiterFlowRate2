@@ -48,8 +48,10 @@ function DrawPointsMap() {
                     .text(i)
                     .on('click',function(d){
                         let clickName = pointdata[parseInt(d['path'][0]['id'])].name
+                        console.log(clickName)
                         let indexss = Object.keys(sight2).indexOf(clickName)
                         UIDataList.RadarIndex = indexss
+                        console.log(indexss)
                         DrawRadarMap(indexss)
                     })
 

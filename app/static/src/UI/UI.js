@@ -65,7 +65,7 @@ function yiyuanChange(){
 
 }function jingquChange(){
     value = document.getElementById("PPrange").value
-    document.getElementById("PPValue").innerHTML=parseFloat(value)+"%"
+    document.getElementById("PPValue").innerHTML=parseFloat(value)*100+"%"
     UIDataList.pp = parseFloat(value)
     DrawRectMap()
 
