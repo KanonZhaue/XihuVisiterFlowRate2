@@ -4,7 +4,7 @@ var UIDataList={
     //startTime and endTime seems usless but i dont want to delete it
     pp:0.1,
     pr:0.1,
-    batch:1,
+    batch:5,
     ap:70,
     RadarIndex:-1,
     
