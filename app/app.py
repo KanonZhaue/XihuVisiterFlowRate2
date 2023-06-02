@@ -26,7 +26,7 @@ def getRectData():
     print(requests)
     pp = requests['pp']
     pr = requests['pr']
-    userId = 0
+    userId = requests['inputId']
     LocationData = 0
     RouteRating = np.zeros(36)
     PopulationRating = np.zeros(36)

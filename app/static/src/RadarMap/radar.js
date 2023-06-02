@@ -160,7 +160,7 @@ function DrawRadarMap(index) {
                 //     }
                 // }
                 clickData = data[UIDataList.RadarIndex]
-                let data1 = dataPolygonPoints(clickData)
+                let data1 =  dataPolygonPoints(clickData)
                 let polygon = RadarSvg.append('g')
                 polygon
                     .append('polygon')

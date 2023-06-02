@@ -1,0 +1,13 @@
+#checkBTNUserid{
+  position: absolute;
+  left: 170px;
+  z-index: 100;
+  top: 30px;
+}
+#useridInput{
+  position: absolute;
+  width: 150px;
+  left: 10px;
+  z-index: 100;
+  top: 30px;
+}

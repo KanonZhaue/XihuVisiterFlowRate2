@@ -35,23 +35,25 @@
         <input type="range" id="youKeGengXinJianGe" min="1" max="10" step="1" value="1" onchange="gengxinChange()">
         <label id="GengxinValue">1</label>
         <label id="PRlabel">The weight of scenic spots capacity</label>
-        <input type="range" id="PRrange" min="0" max="0.5" step="0.1" value="0" onchange="luxianChange()">
-        <label id="PRValue">0</label>
+        <input type="range" id="PRrange" min="0" max="0.5" step="0.1" value="0.1" onchange="luxianChange()">
+        <label id="PRValue">10%</label>
         <label id="PPlabel">The weight of route complexity</label>
-        <input type="range" id="PPrange" min="0" max="0.5" step="0.1" value="0" onchange="jingquChange()">
-        <label id="PPValue">0</label>
-        <!-- <button id="checkBTN" onclick="drawRIverTotalMap()"> check</button> -->
+        <input type="range" id="PPrange" min="0" max="0.5" step="0.1" value="0.1" onchange="jingquChange()">
+        <label id="PPValue">10%</label>
+        <button id="checkBTN" onclick="drawRIverTotalMap()"> check</button>
     </div>
     <div id="map">
         <h4>MAP</h4>
         <div id="mapBox"></div>
     </div>
     <div id="path">
-        <h4>Scatter plot</h4>
+        <h4>Scatter map of scenic spot style</h4>
         <svg id="PointSvg"></svg>
     </div>
     <div id="rect">
-        <h4>the Weight of route complexity</h4>
+        <h4>Recommendation Results</h4>
+        <input type="text" name="userid" id="useridInput" placeholder="Input Tourist id">
+        <button id="checkBTNUserid" onclick="changeUserid()">check</button>
         <svg id="rectSvg"></svg>
     </div>
     <div id="stack">
@@ -59,7 +61,7 @@
         <svg id="stackSvg"></svg>
     </div>
     <div id="Radar">
-        <h4>the weight of scenic spots capacity</h4>
+        <h4>Tourist portrait</h4>
         <svg id="RadarSvg"></svg>
     </div>
 </body>

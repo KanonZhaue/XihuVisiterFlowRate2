@@ -1,6 +1,6 @@
 var PointSvg = d3.select("#PointSvg")
 
-function DrawPointsMap() {
+function DrawPointsMap () {
     var data = {
         data: JSON.stringify(UIDataList)
     }
@@ -40,14 +40,16 @@ function DrawPointsMap() {
                 PointSvg.append("circle")
                     .attr('class', 'pointCircles')
 
-                    .attr('id',`${i}`)
+                    .attr('id', `${i}`)
                     .attr('cx', `${PointsXscale(pointdata[i].x) + MapLeft}`)
                     .attr('cy', `${PointsYscale(pointdata[i].y) + MapTop}px`)
                     .attr('r', '5px')
                     .attr('fill', TypeColor[parseInt(pointdata[i].label) - 1])
                     .text(i)
-                    .on('click',function(d){
-                        let clickName = pointdata[parseInt(d['path'][0]['id'])].name
+                    .on('click', function (d) {
+                        console.log(d)
+                        console.log(d['target']['attributes']['id']['value'])
+                        let clickName = pointdata[parseInt(d['target']['attributes']['id']['value'])].name
                         console.log(clickName)
                         let indexss = Object.keys(sight2).indexOf(clickName)
                         UIDataList.RadarIndex = indexss

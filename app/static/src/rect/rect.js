@@ -1,7 +1,15 @@
 var rectSvg = d3.select('#rectSvg')
+function changeUserid () {
+    if (document.getElementById("useridInput").value == "") {
+        alert("please input tourist id")
+        return
+    }
+    UIDataList['inputId'] = parseInt(document.getElementById("useridInput").value)
+    console.log(document.getElementById("useridInput").value)
+    DrawRectMap()
+}
 
-
-function DrawRectMap() {
+function DrawRectMap () {
     rectSvg.selectAll('.axis').remove()
     rectSvg.selectAll('rect').remove()
     rectSvg.selectAll('text').remove()
@@ -34,7 +42,7 @@ function DrawRectMap() {
                 valueLists.push(RectData2[Top5Data[i]].rectValue)
             }
             console.log(NameList, valueLists)
-            var XscaleLen = 250, YscaleLen = 300, MapTop = 30, RectMapLeft = 10
+            var XscaleLen = 250, YscaleLen = 300, MapTop = 60, RectMapLeft = 10
             var RectsXscale = d3.scaleLinear()
                 .domain([
                     0,
@@ -60,15 +68,15 @@ function DrawRectMap() {
             for (let i = 0; i < columnsss; i++) {
                 rectSvg.append("rect")
                     .attr('x', `${RectMapLeft + 1}px`)
-                    .attr('y', `${(30 + 300 * i / columnsss)}px`)
+                    .attr('y', `${(MapTop + 300 * i / columnsss)}px`)
                     .attr('width', `${(parseFloat(RectsXscale(valueLists[i])))}px`)
                     .attr("height", `${300 * 1 / columnsss - 10}`)
                     .attr('fill', sight2[(NameList[i])].color)
                 rectSvg.append('text')
                     .attr('class', 'RectTexts')
-                    .attr('x', `${RectMapLeft + 1+(parseFloat(RectsXscale(valueLists[i])))}px`)
-                    .attr('y', `${(50 + 300 * i / columnsss)}px`)
-                    .attr('font-size',"8px")
+                    .attr('x', `${RectMapLeft + 1 + (parseFloat(RectsXscale(valueLists[i])))}px`)
+                    .attr('y', `${(20 + MapTop + 300 * i / columnsss)}px`)
+                    .attr('font-size', "8px")
                     // .attr('stroke','white')
                     // .attr('fill','white')
                     .text(() => {

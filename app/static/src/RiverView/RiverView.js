@@ -1,3 +1,7 @@
+var RiverData
+
+
+
 function DrawRiverView() {
     var RiverViewSvg = d3.select('#stackSvg')
     RiverViewSvg.selectAll(".riverPaths").remove()
@@ -14,6 +18,7 @@ function DrawRiverView() {
         data: data,
         success: function (d) {
             console.log(d)
+            RiverData = d.data
             data = d.data
             var max = 0
             for (j = 0; j < data.length; j++) {
@@ -63,6 +68,44 @@ function DrawRiverView() {
                     .attr('class','riverPaths')
                     .attr('fill', sight2[Object.keys(sight2)[i]].color)
                     .attr('transform', 'translate(50,50)')
+                
+                
+
+                
+            }
+            for(let i=0;i<data.length;i++){
+                RiverViewSvg.append("line")
+                    .attr('x1',700/data.length*i+50)
+                    .attr('x2',700/data.length*i+50)
+                    .attr('y1',50)
+                    .attr('y2',350)
+                    .attr('class','River2MapLines')
+                    .attr('stroke','white')
+                    .attr("lineIndex",i)
+                    .attr('opacity',0)
+                    .attr('stroke-width','3px')
+                    // .attr('visibility','hidden')
+                    .on('mouseover',function(e){
+                        
+                        console.log(e,this)
+                        let indexZja = e.target.attributes.lineIndex.value
+                        console.log(indexZja)
+                        console.log(RiverData[indexZja])
+                       
+                        console.log(map.getSource("FlowRate")._data);
+                        var RiverReturnData = map.getSource("FlowRate")._data
+                        for(let i=1;i<RiverData[indexZja].length;i++){
+                            RiverReturnData.features[i-1].properties.dbh = RiverData[indexZja][i]
+                        }
+                        console.log(RiverReturnData)
+                        map.getSource("FlowRate").setData(RiverReturnData)
+
+                        this.setAttribute('opacity','1')
+                    })
+                    .on('mouseout',function(){
+                        this.setAttribute('opacity',"0")
+                    })
+
             }
         }
     })
