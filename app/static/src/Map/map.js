@@ -516,57 +516,57 @@ map.on('load', function () {
         'waterway-label'
     );
 
-    // map.addLayer(
-    //     {
-    //         'id': 'heatmap-point',
-    //         'type': 'circle',
-    //         'source': 'FlowRate',
-    //         'minzoom': 1,
-    //         'paint': {
-    //             // Size circle radius by earthquake magnitude and zoom level
-    //             'circle-radius': [
-    //                 'interpolate',
-    //                 ['linear'],
-    //                 ['zoom'],
-    //                 1,
-    //                 ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 300, 4],
-    //                 15,
-    //                 ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 300, 14]
-    //             ],
-    //             // Color circle by earthquake magnitude
-    //             'circle-color': [
-    //                 'interpolate',
-    //                 ['linear'],
-    //                 ['get', 'dbh'],
-    //                 0,
-    //                 'rgba(33,102,172,0)',
-    //                 60,
-    //                 'rgb(103,169,207)',
-    //                 120,
-    //                 'rgb(209,229,240)',
-    //                 180,
-    //                 'rgb(253,219,199)',
-    //                 240,
-    //                 'rgb(239,138,98)',
-    //                 350,
-    //                 'rgb(178,24,43)'
-    //             ],
-    //             'circle-stroke-color': 'white',
-    //             'circle-stroke-width': 1,
-    //             // Transition from heatmap to circle layer by zoom level
-    //             'circle-opacity': [
-    //                 'interpolate',
-    //                 ['linear'],
-    //                 ['zoom'],
-    //                 7,
-    //                 0,
-    //                 8,
-    //                 1
-    //             ]
-    //         }
-    //     },
-    //     'waterway-label'
-    // );
+    map.addLayer(
+        {
+            'id': 'heatmap-point',
+            'type': 'circle',
+            'source': 'FlowRate',
+            'minzoom': 1,
+            'paint': {
+                // Size circle radius by earthquake magnitude and zoom level
+                'circle-radius': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    1,
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 300, 4],
+                    15,
+                    ['interpolate', ['linear'], ['get', 'dbh'], 1, 1, 300, 14]
+                ],
+                // Color circle by earthquake magnitude
+                'circle-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'dbh'],
+                    0,
+                    'rgba(33,102,172,0)',
+                    60,
+                    'rgb(103,169,207)',
+                    120,
+                    'rgb(209,229,240)',
+                    180,
+                    'rgb(253,219,199)',
+                    240,
+                    'rgb(239,138,98)',
+                    350,
+                    'rgb(178,24,43)'
+                ],
+                'circle-stroke-color': 'white',
+                'circle-stroke-width': 1,
+                // Transition from heatmap to circle layer by zoom level
+                'circle-opacity': [
+                    'interpolate',
+                    ['linear'],
+                    ['zoom'],
+                    7,
+                    0,
+                    8,
+                    1
+                ]
+            }
+        },
+        'waterway-label'
+    );
     map.addLayer({
         'id': 'FlowRate',
         'type': 'symbol',
