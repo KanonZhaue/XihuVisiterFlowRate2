@@ -24,7 +24,7 @@ function getPolygonPoints(datanum, radius, ticknum) {
 const axes = RadarSvg.append('g')
     .attr('class', 'axes')
     .selectAll('axisRadar')
-    .data(getPolygonPoints(5, 150, 5));
+    .data(getPolygonPoints(5, 100, 5));
 
 axes
     .join('polygon')
@@ -36,13 +36,13 @@ axes
     })
     .attr('fill', (d, i) => i % 2 === 0 ? "white" : "#ddd")
     .attr('stroke', "gray")
-    .attr('transform', 'translate(200,200)')
+    .attr('transform', 'translate(110,200)')
 //画标签
 nameset = ['age', 'sex', 'cost', 'exerciseAbility', 'travelType']
 let anglePiece = 2 * Math.PI / nameset.length
 let texts = RadarSvg.append('g')
-x1=[50,-120,-120,50,200]
-y1=[150,100,-100,-150,0]
+x1=[-70,-180,-160,-50,50]
+y1=[100,70,-70,-100,0]
 texts.selectAll('text')
     .data(nameset)
     .join('text')
@@ -76,7 +76,7 @@ function DrawRadarMap(index) {
     const conf3 = {
         margins: { top: 80, left: 80, bottom: 50, right: 80 },
         textColor: 'black',
-        radius: 150,
+        radius: 100,
         animateDuration: 1000,
         tickNum: 6,
         axisfillColor: ['white', '#ddd'],
@@ -170,17 +170,17 @@ function DrawRadarMap(index) {
                     .attr('stroke', conf3.polygon1.stroke)
                     .attr('fill', conf3.polygon1.fill)
                     .attr('opacity', conf3.polygon1.opacity)
-                    .attr('transform', 'translate(200,200)')
+                    .attr('transform', 'translate(110,200)')
                 polygon.append('rect')
                     .attr('class', 'labelRect')
                     .attr('width', 10)
                     .attr('height', 10)
-                    .attr('x', 400)
+                    .attr('x', 200)
                     .attr('y', 150)
                     .attr('fill', conf3.polygon1.fill)
                 polygon.append('text')
                     .attr('class', 'labelText')
-                    .attr('x', 410)
+                    .attr('x', 210)
                     .attr('y', 159)
                     .text(function () {
                         console.log(Object.keys(sight2))
@@ -231,21 +231,22 @@ function DrawRadarMap(index) {
 
 
 function dataPolygonPoints(dataset) {
+    let radius =100
     let c1 = d3.scaleLinear()
         .domain([0, 50])
-        .range([0, 150])
+        .range([0, radius])
     let c2 = d3.scaleLinear()
         .domain([0, 5])
-        .range([0, 150])
+        .range([0, radius])
     let c3 = d3.scaleLinear()
         .domain([0, 5])
-        .range([0, 150])
+        .range([0, radius])
     let c4 = d3.scaleLinear()
         .domain([0, 5])
-        .range([0, 150])
+        .range([0, radius])
     let c5 = d3.scaleLinear()
         .domain([0, 5])
-        .range([0, 150])
+        .range([0, radius])
 
 
 
