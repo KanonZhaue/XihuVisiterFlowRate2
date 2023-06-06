@@ -182,6 +182,19 @@ def getPolygonData():
     return json.dumps(returnData)
 
 
+@app.route("/getPolygon2Data",methods=['POST'])
+def getPolygon2Data():
+    requests = json.loads(flask.request.form.get('data'))
+    id = requests["inputId"]
+    with open("./static/data/CharaRating.csv",encoding='utf-8')as f:
+        textLabel = ['id','name','age','sex','cost','exerciseAbility','travelType']
+        returnData=[]
+        reader = csv.reader(f)
+        column = [row for row in reader]
+        return json.dumps(column[int(id)+1])
+    
+    # return json.dumps(returnData)
+
 if __name__ == "__main__":
     app.run(debug=True)
 

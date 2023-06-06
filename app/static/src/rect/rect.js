@@ -7,6 +7,7 @@ function changeUserid () {
     UIDataList['inputId'] = parseInt(document.getElementById("useridInput").value)
     console.log(document.getElementById("useridInput").value)
     DrawRectMap()
+    DrawRadar2Map()
 }
 
 function DrawRectMap () {

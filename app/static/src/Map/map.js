@@ -62,7 +62,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.143,30.257]
+                        "coordinates": [120.138, 30.262]
                     }
                 },
                 {
@@ -117,7 +117,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.138,30.262]
+                        "coordinates": [120.153, 30.245]
                     }
                 },
                 {
@@ -150,7 +150,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.158, 30.253]
+                        "coordinates": [120.136, 30.253]
                     }
                 }
                 ,
@@ -173,7 +173,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.153, 30.245]
+                        "coordinates": [120.133, 30.247]
                     }
                 }
                 ,
@@ -257,7 +257,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.144, 30.232]
+                        "coordinates": [120.118, 30.256]
                     }
                 },
                 {
@@ -291,7 +291,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.136, 30.239]
+                        "coordinates": [120.119, 30.24]
                     }
                 },
                 {
@@ -302,7 +302,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.127, 30.238]
+                        "coordinates": [120.129, 30.255]
                     }
                 },
                 {
@@ -313,7 +313,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.122, 30.242]
+                        "coordinates": [120.124, 30.241]
                     }
                 },
                 {
@@ -335,7 +335,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.127, 30.243]
+                        "coordinates": [120.157, 30.254]
                     }
                 },
                 {
@@ -357,7 +357,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.126, 30.248]
+                        "coordinates": [120.116, 30.253]
                     }
                 },
                 {
@@ -423,7 +423,7 @@ map.on('load', function () {
                     },
                     "geometry": {
                         "type": "Point",
-                        "coordinates": [120.108, 30.247]
+                        "coordinates": [120.145, 30.23]
                     }
                 },
                 {
@@ -474,14 +474,27 @@ map.on('load', function () {
                     'interpolate',
                     ['linear'],
                     ['heatmap-density'],
+                    // 0,
+                    // 'rgba(33,102,172,0)',
+                    // 0.2,
+                    // 'rgb(103,169,207)',
+                    // 0.4,
+                    // 'rgb(209,229,240)',
+                    // 0.6,
+                    // 'rgb(253,219,199)',
+                    // 0.8,
+                    // 'rgb(239,138,98)',
+                    // 1,
+                    // 'rgb(178,24,43)'
+
                     0,
                     'rgba(33,102,172,0)',
                     0.2,
-                    'rgb(103,169,207)',
+                    'rgb(0,255,0)',
                     0.4,
-                    'rgb(209,229,240)',
+                    'rgb(154,205,50)',
                     0.6,
-                    'rgb(253,219,199)',
+                    'rgb(255,215,0)',
                     0.8,
                     'rgb(239,138,98)',
                     1,
@@ -499,9 +512,9 @@ map.on('load', function () {
                     'interpolate',
                     ['linear'],
                     ['zoom'],
-                    7,
+                    10,
                     1,
-                    15,
+                    20,
                     0
                 ]
             }
